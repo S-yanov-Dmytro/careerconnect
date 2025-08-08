@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="error-container">
+    <h1>404 - Страница не найдена</h1>
+    <p>Запрошенная вакансия или страница не существует.</p>
+    <a href="{{ url_for('blog.index') }}" class="btn">Вернуться к списку вакансий</a>
+</div>
+
+<style>
+    .error-container {
+        max-width: 800px;
+        margin: 100px auto;
+        text-align: center;
+        padding: 2rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+        color: #d9534f;
+        margin-bottom: 1rem;
+    }
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4361ee;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #3a0ca3;
+    }
+</style>
+{% endblock %}

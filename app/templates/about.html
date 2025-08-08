@@ -1,0 +1,356 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  :root {
+    --primary: #5e72e4;
+    --primary-dark: #4a5acf;
+    --secondary: #f5365c;
+    --accent: #11cdef;
+    --light: #f8f9fa;
+    --dark: #32325d;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+
+  .about-hero {
+    background: linear-gradient(rgba(50, 50, 93, 0.85), rgba(50, 50, 93, 0.9)),
+                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+  }
+
+  .about-hero h1 {
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .about-hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+  }
+
+  .about-page {
+    max-width: 1140px;
+    margin: 0 auto 6rem;
+    padding: 0 1.5rem;
+  }
+
+  .about-section {
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .about-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--dark);
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+  }
+
+  .about-section p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .partners-section {
+    background: var(--light);
+    padding: 4rem 0;
+    margin: 4rem 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .partner {
+    background: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+    color: var(--dark);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    border: 1px solid var(--light-gray);
+  }
+
+  .partner:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+  }
+
+  .testimonials {
+    margin-top: 4rem;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    border: 1px solid var(--light-gray);
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    color: var(--primary-light);
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .testimonial-content {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .testimonial-position {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding: 4rem 1rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<div class="about-hero">
+  <div class="container">
+    <h1>{{ _('Наша місія — ваш успіх') }}</h1>
+    <p>{{ _('Допомагаємо знаходити роботу мрії в Польщі з 2013 року') }}</p>
+  </div>
+</div>
+
+<div class="about-page">
+  <section class="about-section">
+    <h2>{{ _('Наша історія') }}</h2>
+    <p>{{ _('Top-Staff було засновано у 2013 році з метою допомогти українцям знаходити гідну роботу за кордоном. Починаючи з невеликої команди з 5 осіб, ми виросли до одного з лідерів ринку працевлаштування в Польщі.') }}</p>
+    <p>{{ _('За роки роботи ми допомогли понад 10,000 спеціалістам знайти роботу за фахом, навчилися розуміти потреби як кандидатів, так і роботодавців, створивши ефективну систему підбору персоналу.') }}</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>10,000+</h3>
+        <p>{{ _('Кандидатів знайшли роботу завдяки нам') }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3>200+</h3>
+        <p>{{ _('Партнерських компаній по всій Польщі') }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <h3>15</h3>
+        <p>{{ _('Міст, де ми працевлаштували наших клієнтів') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>{{ _('Наші цінності') }}</h2>
+    <p>{{ _('Ми будуємо роботу на принципах прозорості, професіоналізму та індивідуального підходу до кожного клієнта.') }}</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>{{ _('Чесність') }}</h3>
+        <p>{{ _('Ми говоримо правду про умови роботи та заробітну плату, без прикрас та обіцянок') }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>{{ _('Безпека') }}</h3>
+        <p>{{ _('Тільки офіційне працевлаштування з дотриманням усіх прав працівника') }}</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3>{{ _('Підтримка') }}</h3>
+        <p>{{ _('Допомагаємо з документами, житлом та адаптацією в новій країні') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="container">
+      <div class="about-section">
+        <h2>{{ _('Наші партнери') }}</h2>
+        <p>{{ _('Ми співпрацюємо з провідними компаніями Польщі, які цінують професійність та відданість справі') }}</p>
+
+        <div class="partners-grid">
+          <div class="partner">{{ _('ABC Роботодавці') }}</div>
+          <div class="partner">{{ _('Польська Логістика') }}</div>
+          <div class="partner">{{ _('Фірма «Кар\'єра»') }}</div>
+          <div class="partner">{{ _('Трудові Ресурси') }}</div>
+          <div class="partner">{{ _('Відкрите Майбутнє') }}</div>
+          <div class="partner">{{ _('Надійна Компанія') }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>{{ _('Наша команда') }}</h2>
+    <p>{{ _('У нашій команді працюють професіонали з багаторічним досвідом у рекрутингу, трудовому праві та міграційних процесах. Ми об\'єдналися, щоб зробити процес працевлаштування максимально простим і безпечним для вас.') }}</p>
+  </section>
+
+  <section class="about-section testimonials">
+    <h2>{{ _('Відгуки наших клієнтів') }}</h2>
+
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        {{ _('Завдяки Top-Staff я швидко знайшов роботу у Варшаві та офіційно оформився. Весь процес був простим і зрозумілим, а підтримка команди — на найвищому рівні!') }}
+      </div>
+      <div class="testimonial-author">{{ _('Олександр Коваленко') }}</div>
+      <div class="testimonial-position">{{ _('Оператор виробництва, Варшава') }}</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-content">
+        {{ _('Дуже вдячна за допомогу з документами та працевлаштуванням. Працюю в логістичній компанії вже півтора року, всі умови дотримуються. Рекомендую Top-Staff всім, хто шукає роботу в Польщі.') }}
+      </div>
+      <div class="testimonial-author">{{ _('Марія Петренко') }}</div>
+      <div class="testimonial-position">{{ _('Менеджер з логістики, Краків') }}</div>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Анимация элементов при загрузке
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = (elements) => {
+      elements.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 150 * i);
+      });
+    };
+
+    // Анимация карточек
+    animateElements(document.querySelectorAll('.feature-card'));
+    animateElements(document.querySelectorAll('.partner'));
+    animateElements(document.querySelectorAll('.testimonial-card'));
+  });
+</script>
+{% endblock %}

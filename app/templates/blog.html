@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  :root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --secondary: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .blog-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--dark);
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+
+  .blog-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+  }
+
+  .blog-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.05em;
+  }
+
+  .blog-subtitle {
+    font-size: 1.25rem;
+    color: var(--gray);
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+  }
+
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .job-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(67, 97, 238, 0.2);
+  }
+
+  .job-card-content {
+    padding: 1.75rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .job-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .job-description {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .job-date {
+    font-size: 0.875rem;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  .btn-readmore {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-readmore:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  }
+
+  .btn-readmore i {
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-readmore:hover i {
+    transform: translateX(3px);
+  }
+
+  .no-jobs {
+    text-align: center;
+    padding: 3rem;
+    background: var(--light);
+    border-radius: 12px;
+    color: var(--gray);
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 768px) {
+    .blog-page {
+      padding: 1.5rem 1rem;
+    }
+
+    .jobs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="blog-page" role="main" aria-label="{{ _('Блог та вакансії') }}">
+  <header class="blog-header">
+    <h1 class="blog-title">{{ _('Кар\'єрні можливості') }}</h1>
+    <p class="blog-subtitle">{{ _('Долучайтеся до нашої команди та дізнавайтесь про останні новини компанії') }}</p>
+  </header>
+
+  <section>
+    <h2 class="section-title">{{ _('Відкриті вакансії') }}</h2>
+    <div class="jobs-grid" aria-live="polite">
+      {% for job in posts %}
+      <article class="job-card" tabindex="0" aria-labelledby="job-title-{{ job.id }}" role="article">
+        <div class="job-card-content">
+          <h3 id="job-title-{{ job.id }}" class="job-title">{{ job.title }}</h3>
+          <p class="job-description">{{ job.description }}</p>
+          <div class="job-meta">
+            <time class="job-date" datetime="{{ job.date }}">{{ job.formatted_date }}</time>
+            <a href="{{ url_for('blog.view_post', post_id=job.id) }}" class="btn-readmore" aria-label="{{ _('Детальніше про вакансію') }} {{ job.title }}">
+              {{ _('Детальніше') }} <i>→</i>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% else %}
+      <div class="no-jobs">
+        <p>{{ _('Наразі відкритих вакансій немає, але заходьте пізніше — ми постійно розвиваємось!') }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<script>
+  // Добавляем плавное появление карточек
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.job-card');
+    cards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100 * index);
+    });
+  });
+</script>
+{% endblock %}

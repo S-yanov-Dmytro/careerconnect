@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="vacancy-details-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Хлебные крошки -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">{{ _('Главная') }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url_for('main.vacancies') }}">{{ _('Вакансии') }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ vacancy.title }}</li>
+                    </ol>
+                </nav>
+
+                <!-- Заголовок вакансии -->
+                <h1 class="mb-3">{{ vacancy.title }}</h1>
+
+                <!-- Мета-информация -->
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                    <span class="text-muted">
+                        <i class="far fa-calendar-alt me-1"></i>
+                        {{ _('Опубликовано') }}: {{ vacancy.created_at.strftime('%d.%m.%Y') }}
+                    </span>
+                    {% if vacancy.updated_at %}
+                    <span class="text-muted">
+                        <i class="fas fa-sync-alt me-1"></i>
+                        {{ _('Обновлено') }}: {{ vacancy.updated_at.strftime('%d.%m.%Y') }}
+                    </span>
+                    {% endif %}
+                </div>
+
+                <!-- Описание вакансии -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title h5">{{ _('Описание вакансии') }}</h3>
+                        <div class="card-text">
+                            {{ vacancy.description|safe }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Требования -->
+                {% if vacancy.requirements %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title h5">{{ _('Требования') }}</h3>
+                        <div class="card-text">
+                            {{ vacancy.requirements|safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Условия -->
+                {% if vacancy.conditions %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title h5">{{ _('Мы предлагаем') }}</h3>
+                        <div class="card-text">
+                            {{ vacancy.conditions|safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Боковая панель с формой заявки -->
+            <div class="col-lg-4">
+                <div class="card sticky-top" style="top: 20px;">
+                    <div class="card-body">
+                        <h3 class="card-title h4 mb-4">{{ _('Откликнуться на вакансию') }}</h3>
+
+                        <form method="POST" action="{{ url_for('admin.apply_vacancy', vacancy_id=vacancy._id) }}" enctype="multipart/form-data">
+                            {{ form.hidden_tag() }}
+
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label">{{ _('ФИО') }}</label>
+                                <input type="text" class="form-control" id="full_name" name="full_name"
+                                       placeholder="{{ _('Иванов Иван Иванович') }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       placeholder="example@mail.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">{{ _('Телефон') }}</label>
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                       placeholder="+7 (999) 123-45-67" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">{{ _('Сопроводительное письмо') }}</label>
+                                <textarea class="form-control" id="message" name="message"
+                                          rows="4" placeholder="{{ _('Ваше сопроводительное письмо...') }}"></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="resume" class="form-label">{{ _('Резюме') }}</label>
+                                <input type="file" class="form-control" id="resume" name="resume" required>
+                                <div class="form-text">{{ _('Поддерживаются файлы PDF, DOC, DOCX до 5MB') }}</div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2">
+                                <i class="fas fa-paper-plane me-2"></i> {{ _('Отправить заявку') }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

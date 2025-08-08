@@ -1,0 +1,1572 @@
+# Deutsche Übersetzungen für PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# Diese Datei wird unter der gleichen Lizenz wie das PROJECT-Projekt verteilt.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-12 23:37+0200\n"
+"PO-Revision-Date: 2025-06-13 00:00+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/templates/about.html:225
+msgid "Наша місія — ваш успіх"
+msgstr "Unsere Mission - Ihr Erfolg"
+
+#: app/templates/about.html:226
+msgid "Допомагаємо знаходити роботу мрії в Польщі з 2013 року"
+msgstr "Wir helfen seit 2013, Traumjobs in Polen zu finden"
+
+#: app/templates/about.html:232
+msgid "Наша історія"
+msgstr "Unsere Geschichte"
+
+#: app/templates/about.html:233
+msgid ""
+"Top-Staff було засновано у 2013 році з метою допомогти українцям "
+"знаходити гідну роботу за кордоном. Починаючи з невеликої команди з 5 "
+"осіб, ми виросли до одного з лідерів ринку працевлаштування в Польщі."
+msgstr ""
+"Top-Staff wurde 2013 gegründet, um Ukrainern bei der Jobsuche im Ausland zu helfen. "
+"Beginnend mit einem kleinen Team von 5 Personen sind wir zu einem der Marktführer "
+"in der Arbeitsvermittlung in Polen geworden."
+
+#: app/templates/about.html:234
+msgid ""
+"За роки роботи ми допомогли понад 10,000 спеціалістам знайти роботу за "
+"фахом, навчилися розуміти потреби як кандидатів, так і роботодавців, "
+"створивши ефективну систему підбору персоналу."
+msgstr ""
+"Über die Jahre haben wir über 10.000 Fachkräften zu passenden Jobs verholfen, "
+"haben gelernt, die Bedürfnisse von Bewerbern und Arbeitgebern zu verstehen "
+"und ein effizientes Personalsystem aufgebaut."
+
+#: app/templates/about.html:242
+msgid "Кандидатів знайшли роботу завдяки нам"
+msgstr "Kandidaten fanden Arbeit durch uns"
+
+#: app/templates/about.html:249
+msgid "Партнерських компаній по всій Польщі"
+msgstr "Partnerunternehmen in ganz Polen"
+
+#: app/templates/about.html:256
+msgid "Міст, де ми працевлаштували наших клієнтів"
+msgstr "Städte, in denen wir Kunden vermittelt haben"
+
+#: app/templates/about.html:262
+msgid "Наші цінності"
+msgstr "Unsere Werte"
+
+#: app/templates/about.html:263
+msgid ""
+"Ми будуємо роботу на принципах прозорості, професіоналізму та "
+"індивідуального підходу до кожного клієнта."
+msgstr ""
+"Wir arbeiten nach Prinzipien der Transparenz, Professionalität und "
+"individueller Betreuung jedes Kunden."
+
+#: app/templates/about.html:270
+msgid "Чесність"
+msgstr "Ehrlichkeit"
+
+#: app/templates/about.html:271
+msgid ""
+"Ми говоримо правду про умови роботи та заробітну плату, без прикрас та "
+"обіцянок"
+msgstr ""
+"Wir sagen die Wahrheit über Arbeitsbedingungen und Gehalt, ohne Beschönigungen "
+"oder leere Versprechen"
+
+#: app/templates/about.html:277
+msgid "Безпека"
+msgstr "Sicherheit"
+
+#: app/templates/about.html:278
+msgid "Тільки офіційне працевлаштування з дотриманням усіх прав працівника"
+msgstr ""
+"Nur offizielle Anstellungen unter Einhaltung aller Arbeitnehmerrechte"
+
+#: app/templates/about.html:284
+msgid "Підтримка"
+msgstr "Unterstützung"
+
+#: app/templates/about.html:285
+msgid "Допомагаємо з документами, житлом та адаптацією в новій країні"
+msgstr ""
+"Wir helfen mit Dokumenten, Wohnungssuche und Eingewöhnung im neuen Land"
+
+#: app/templates/about.html:293
+msgid "Наші партнери"
+msgstr "Unsere Partner"
+
+#: app/templates/about.html:294
+msgid ""
+"Ми співпрацюємо з провідними компаніями Польщі, які цінують професійність"
+" та відданість справі"
+msgstr ""
+"Wir arbeiten mit führenden polnischen Unternehmen zusammen, die Professionalität "
+"und Engagement schätzen"
+
+#: app/templates/about.html:297
+msgid "ABC Роботодавці"
+msgstr "ABC Arbeitgeber"
+
+#: app/templates/about.html:298
+msgid "Польська Логістика"
+msgstr "Polnische Logistik"
+
+#: app/templates/about.html:299
+msgid "Фірма «Кар'єра»"
+msgstr "Firma 'Karriere'"
+
+#: app/templates/about.html:300
+msgid "Трудові Ресурси"
+msgstr "Arbeitsressourcen"
+
+#: app/templates/about.html:301
+msgid "Відкрите Майбутнє"
+msgstr "Offene Zukunft"
+
+#: app/templates/about.html:302
+msgid "Надійна Компанія"
+msgstr "Zuverlässiges Unternehmen"
+
+#: app/templates/about.html:309
+msgid "Наша команда"
+msgstr "Unser Team"
+
+#: app/templates/about.html:310
+msgid ""
+"У нашій команді працюють професіонали з багаторічним досвідом у "
+"рекрутингу, трудовому праві та міграційних процесах. Ми об'єдналися, щоб "
+"зробити процес працевлаштування максимально простим і безпечним для вас."
+msgstr ""
+"In unserem Team arbeiten Profis mit langjähriger Erfahrung in Recruitment, "
+"Arbeitsrecht und Migrationsprozessen. Wir haben uns zusammengeschlossen, "
+"um den Arbeitsvermittlungsprozess für Sie so einfach und sicher wie möglich "
+"zu gestalten."
+
+#: app/templates/about.html:314
+msgid "Відгуки наших клієнтів"
+msgstr "Kundenstimmen"
+
+#: app/templates/about.html:318
+msgid ""
+"Завдяки Top-Staff я швидко знайшов роботу у Варшаві та офіційно "
+"оформився. Весь процес був простим і зрозумілим, а підтримка команди — на"
+" найвищому рівні!"
+msgstr ""
+"Dank Top-Staff fand ich schnell einen Job in Warschau und wurde offiziell "
+"angestellt. Der gesamte Prozess war einfach und verständlich, und die "
+"Unterstützung durch das Team war erstklassig!"
+
+#: app/templates/about.html:320
+msgid "Олександр Коваленко"
+msgstr "Oleksandr Kowalenko"
+
+#: app/templates/about.html:321
+msgid "Оператор виробництва, Варшава"
+msgstr "Produktionsmitarbeiter, Warschau"
+
+#: app/templates/about.html:326
+msgid ""
+"Дуже вдячна за допомогу з документами та працевлаштуванням. Працюю в "
+"логістичній компанії вже півтора року, всі умови дотримуються. Рекомендую"
+" Top-Staff всім, хто шукає роботу в Польщі."
+msgstr ""
+"Ich bin sehr dankbar für die Hilfe mit den Dokumenten und der Arbeitsvermittlung. "
+"Ich arbeite seit eineinhalb Jahren in einer Logistikfirma, alle Bedingungen "
+"werden eingehalten. Ich empfehle Top-Staff allen, die in Polen Arbeit suchen."
+
+#: app/templates/about.html:328
+msgid "Марія Петренко"
+msgstr "Maria Petrenko"
+
+#: app/templates/about.html:329
+msgid "Менеджер з логістики, Краків"
+msgstr "Logistikmanagerin, Krakau"
+
+#: app/templates/admin.html:7
+msgid "Панель адміністратора"
+msgstr "Administrator-Panel"
+
+#: app/templates/admin.html:10
+msgid "Вийти"
+msgstr "Ausloggen"
+
+#: app/templates/admin.html:19
+msgid "Пости"
+msgstr "Beiträge"
+
+#: app/templates/admin.html:24
+msgid "Вакансії"
+msgstr "Stellenangebote"
+
+#: app/templates/admin.html:40
+msgid "Редагування поста"
+msgstr "Beitrag bearbeiten"
+
+#: app/templates/admin.html:40
+msgid "Створення нового поста"
+msgstr "Neuen Beitrag erstellen"
+
+#: app/templates/admin.html:51 app/templates/admin.html:89
+msgid "Заголовок"
+msgstr "Titel"
+
+#: app/templates/admin.html:52
+msgid "Заголовок поста"
+msgstr "Beitragstitel"
+
+#: app/templates/admin.html:56
+msgid "Вміст поста"
+msgstr "Beitragsinhalt"
+
+#: app/templates/admin.html:62 app/templates/admin.html:181
+msgid "Зберегти"
+msgstr "Speichern"
+
+#: app/templates/admin.html:66 app/templates/admin.html:185
+msgid "Скасувати"
+msgstr "Abbrechen"
+
+#: app/templates/admin.html:75
+msgid "Всі пости"
+msgstr "Alle Beiträge"
+
+#: app/templates/admin.html:82
+msgid "Немає створених постів"
+msgstr "Keine Beiträge vorhanden"
+
+#: app/templates/admin.html:90 app/templates/admin.html:209
+msgid "Дата"
+msgstr "Datum"
+
+#: app/templates/admin.html:91
+msgid "Перегляди"
+msgstr "Aufrufe"
+
+#: app/templates/admin.html:92 app/templates/admin.html:210
+msgid "Дії"
+msgstr "Aktionen"
+
+#: app/templates/admin.html:113 app/templates/admin.html:228
+msgid "Редагувати"
+msgstr "Bearbeiten"
+
+#: app/templates/admin.html:117 app/templates/admin.html:231
+msgid "Перегляд"
+msgstr "Ansehen"
+
+#: app/templates/admin.html:121
+msgid "Видалити цей пост?"
+msgstr "Diesen Beitrag löschen?"
+
+#: app/templates/admin.html:122 app/templates/admin.html:236
+msgid "Видалити"
+msgstr "Löschen"
+
+#: app/templates/admin.html:141
+msgid "Редагування вакансії"
+msgstr "Stellenangebot bearbeiten"
+
+#: app/templates/admin.html:141
+msgid "Нова вакансія"
+msgstr "Neue Stelle"
+
+#: app/templates/admin.html:152 app/templates/admin.html:208
+msgid "Назва"
+msgstr "Bezeichnung"
+
+#: app/templates/admin.html:153
+msgid "Назва вакансії"
+msgstr "Stellenbezeichnung"
+
+#: app/templates/admin.html:160 app/templates/admin.html:161
+msgid "Опис"
+msgstr "Beschreibung"
+
+#: app/templates/admin.html:167 app/templates/admin.html:168
+msgid "Вимоги"
+msgstr "Anforderungen"
+
+#: app/templates/admin.html:175
+msgid "Умови"
+msgstr "Bedingungen"
+
+#: app/templates/admin.html:176 app/templates/cv.html:458
+msgid "Умови роботи"
+msgstr "Arbeitsbedingungen"
+
+#: app/templates/admin.html:194 app/templates/index.html:572
+#: app/templates/vacancies.html:336
+msgid "Всі вакансії"
+msgstr "Alle Stellenangebote"
+
+#: app/templates/admin.html:201
+msgid "Немає активних вакансій"
+msgstr "Keine aktiven Stellen"
+
+#: app/templates/admin.html:235
+msgid "Видалити цю вакансію?"
+msgstr "Diese Stelle löschen?"
+
+#: app/templates/base.html:301
+msgid "О нас"
+msgstr "Über uns"
+
+#: app/templates/base.html:304
+msgid "Ищу работу"
+msgstr "Arbeit suchen"
+
+#: app/templates/base.html:307 app/templates/vacancy_detail.html:12
+msgid "Вакансии"
+msgstr "Stellenangebote"
+
+#: app/templates/base.html:310
+msgid "Легализация"
+msgstr "Legalisierung"
+
+#: app/templates/base.html:313
+msgid "Блог"
+msgstr "Blog"
+
+#: app/templates/base.html:316
+msgid "FAQ"
+msgstr "FAQ"
+
+#: app/templates/base.html:319
+msgid "Контакты"
+msgstr "Kontakte"
+
+#: app/templates/base.html:344
+msgid "Слідкуйте за нами в соцмережах"
+msgstr "Folgen Sie uns in sozialen Netzwerken"
+
+#: app/templates/blog.html:202
+msgid "Блог та вакансії"
+msgstr "Blog und Stellen"
+
+#: app/templates/blog.html:204
+msgid "Кар'єрні можливості"
+msgstr "Karrieremöglichkeiten"
+
+#: app/templates/blog.html:205
+msgid "Долучайтеся до нашої команди та дізнавайтесь про останні новини компанії"
+msgstr ""
+"Werden Sie Teil unseres Teams und erfahren Sie die neuesten Unternehmensnachrichten"
+
+#: app/templates/blog.html:209
+msgid "Відкриті вакансії"
+msgstr "Offene Stellen"
+
+#: app/templates/blog.html:218
+msgid "Детальніше про вакансію"
+msgstr "Mehr zur Stelle"
+
+#: app/templates/blog.html:219 app/templates/index.html:557
+msgid "Детальніше"
+msgstr "Mehr Details"
+
+#: app/templates/blog.html:226
+msgid ""
+"Наразі відкритих вакансій немає, але заходьте пізніше — ми постійно "
+"розвиваємось!"
+msgstr ""
+"Derzeit keine offenen Stellen, aber schauen Sie später wieder vorbei - "
+"wir wachsen ständig!"
+
+#: app/templates/contact.html:515
+msgid "Свяжитесь с нами"
+msgstr "Kontaktieren Sie uns"
+
+#: app/templates/contact.html:516
+msgid ""
+"Мы готовы помочь вам найти работу в Польше. Наша команда экспертов "
+"ответит на все ваши вопросы и предложит лучшие варианты."
+msgstr ""
+"Wir helfen Ihnen bei der Jobsuche in Polen. Unser Expertenteam beantwortet "
+"alle Ihre Fragen und bietet die besten Optionen."
+
+#: app/templates/contact.html:529
+msgid "Наш офис"
+msgstr "Unser Büro"
+
+#: app/templates/contact.html:530
+msgid "Люблин, ул. Graniczna 4/22Польша"
+msgstr "Lublin, ul. Graniczna 4/22Polen"
+
+#: app/templates/contact.html:536 app/templates/contact.html:625
+#: app/templates/cv.html:425 app/templates/index.html:622
+#: app/templates/vacancy_detail.html:91
+msgid "Телефон"
+msgstr "Telefon"
+
+#: app/templates/contact.html:538
+msgid "Звонки и WhatsApp"
+msgstr "Anrufe und WhatsApp"
+
+#: app/templates/contact.html:544
+msgid "Часы работы"
+msgstr "Öffnungszeiten"
+
+#: app/templates/contact.html:545
+msgid "Понедельник – Пятница 09:00 – 17:00"
+msgstr "Montag - Freitag 09:00 - 17:00 Uhr"
+
+#: app/templates/contact.html:559
+msgid "Наш офис в Люблине"
+msgstr "Unser Büro in Lublin"
+
+#: app/templates/contact.html:562
+msgid "ул. Graniczna 4/22, Люблин, Польша"
+msgstr "ul. Graniczna 4/22, Lublin, Polen"
+
+#: app/templates/contact.html:585
+msgid "График работы"
+msgstr "Arbeitszeiten"
+
+#: app/templates/contact.html:587
+msgid "Понедельник - Пятница"
+msgstr "Montag - Freitag"
+
+#: app/templates/contact.html:588
+msgid "09:00 - 17:00"
+msgstr "09:00 - 17:00 Uhr"
+
+#: app/templates/contact.html:591
+msgid "Суббота"
+msgstr "Samstag"
+
+#: app/templates/contact.html:592 app/templates/contact.html:596
+msgid "Выходной"
+msgstr "Ruhetag"
+
+#: app/templates/contact.html:595
+msgid "Воскресенье"
+msgstr "Sonntag"
+
+#: app/templates/contact.html:604 app/templates/contact.html:646
+msgid "Отправить сообщение"
+msgstr "Nachricht senden"
+
+#: app/templates/contact.html:605
+msgid "Заполните форму ниже, и мы свяжемся с вами в ближайшее время"
+msgstr ""
+"Füllen Sie das Formular aus und wir melden uns umgehend bei Ihnen"
+
+#: app/templates/contact.html:610
+msgid "Имя *"
+msgstr "Vorname *"
+
+#: app/templates/contact.html:614
+msgid "Фамилия"
+msgstr "Nachname"
+
+#: app/templates/contact.html:620
+msgid "Email *"
+msgstr "E-Mail *"
+
+#: app/templates/contact.html:630
+msgid "Тема обращения"
+msgstr "Betreff"
+
+#: app/templates/contact.html:632
+msgid "Выберите тему"
+msgstr "Thema wählen"
+
+#: app/templates/contact.html:633
+msgid "Поиск работы"
+msgstr "Arbeitssuche"
+
+#: app/templates/contact.html:634
+msgid "Легализация документов"
+msgstr "Dokumentenlegalisierung"
+
+#: app/templates/contact.html:635
+msgid "Консультация"
+msgstr "Beratung"
+
+#: app/templates/contact.html:636
+msgid "Другое"
+msgstr "Anderes"
+
+#: app/templates/contact.html:641
+msgid "Сообщение *"
+msgstr "Nachricht *"
+
+#: app/templates/contact.html:642
+msgid "Расскажите подробнее о том, как мы можем вам помочь..."
+msgstr "Erzählen Sie uns mehr darüber, wie wir Ihnen helfen können..."
+
+#: app/templates/contact.html:727
+msgid "ул. Graniczna 4/22"
+msgstr "ul. Graniczna 4/22"
+
+#: app/templates/contact.html:728
+msgid "Люблин, Польша"
+msgstr "Lublin, Polen"
+
+#: app/templates/contact.html:730
+msgid "Пн-Пт: 09:00-17:00"
+msgstr "Mo-Fr: 09:00-17:00"
+
+#: app/templates/contact.html:752
+msgid "Карта временно недоступна"
+msgstr "Karte vorübergehend nicht verfügbar"
+
+#: app/templates/contact.html:753
+msgid "ул. Graniczna 4/22, Люблин"
+msgstr "ul. Graniczna 4/22, Lublin"
+
+#: app/templates/contact.html:784
+msgid "Отправляем..."
+msgstr "Wird gesendet..."
+
+#: app/templates/contact.html:792
+msgid "Спасибо!"
+msgstr "Danke!"
+
+#: app/templates/contact.html:792
+msgid "Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время."
+msgstr ""
+"Ihre Nachricht wurde erfolgreich versendet. Wir melden uns in Kürze bei Ihnen."
+
+#: app/templates/contact.html:811
+msgid "Пожалуйста, заполните все обязательные поля."
+msgstr "Bitte füllen Sie alle Pflichtfelder aus."
+
+#: app/templates/cv.html:146
+msgid "Створіть"
+msgstr "Erstellen Sie"
+
+#: app/templates/cv.html:146
+msgid "анкету для роботи"
+msgstr "einen Arbeitsfragebogen"
+
+#: app/templates/cv.html:147
+msgid ""
+"Заповніть анкету для швидкого пошуку роботи в Польщі. Ми допоможемо "
+"знайти вам найкращі вакансії."
+msgstr ""
+"Füllen Sie den Fragebogen für eine schnelle Jobsuche in Polen aus. Wir "
+"helfen Ihnen, die besten Stellen zu finden."
+
+#: app/templates/cv.html:155 app/templates/cv.html:421
+msgid "Основна інформація"
+msgstr "Grundinformationen"
+
+#: app/templates/cv.html:159
+msgid "Ім'я*"
+msgstr "Vorname*"
+
+#: app/templates/cv.html:163
+msgid "Прізвище*"
+msgstr "Nachname*"
+
+#: app/templates/cv.html:170
+msgid "Дата народження*"
+msgstr "Geburtsdatum*"
+
+#: app/templates/cv.html:174
+msgid "Стать*"
+msgstr "Geschlecht*"
+
+#: app/templates/cv.html:176 app/templates/cv.html:216
+#: app/templates/cv.html:238 app/templates/cv.html:248
+#: app/templates/cv.html:259 app/templates/cv.html:290
+#: app/templates/cv.html:307
+msgid "Оберіть"
+msgstr "Wählen"
+
+#: app/templates/cv.html:177
+msgid "Чоловік"
+msgstr "Mann"
+
+#: app/templates/cv.html:178
+msgid "Жінка"
+msgstr "Frau"
+
+#: app/templates/cv.html:184
+msgid "Контактний телефон*"
+msgstr "Kontakttelefon*"
+
+#: app/templates/cv.html:191
+msgid "Інформація для роботи"
+msgstr "Arbeitsinformationen"
+
+#: app/templates/cv.html:194
+msgid "Бажана посада*"
+msgstr "Gewünschte Position*"
+
+#: app/templates/cv.html:196
+msgid "Оберіть посаду"
+msgstr "Position wählen"
+
+#: app/templates/cv.html:197
+msgid "Будівельник"
+msgstr "Bauarbeiter"
+
+#: app/templates/cv.html:198
+msgid "Водій"
+msgstr "Fahrer"
+
+#: app/templates/cv.html:199
+msgid "Складський працівник"
+msgstr "Lagerarbeiter"
+
+#: app/templates/cv.html:200
+msgid "Прибиральник"
+msgstr "Reinigungskraft"
+
+#: app/templates/cv.html:201
+msgid "Робітник на завод"
+msgstr "Fabrikarbeiter"
+
+#: app/templates/cv.html:202
+msgid "Сільське господарство"
+msgstr "Landwirtschaft"
+
+#: app/templates/cv.html:203 app/templates/cv.html:295
+msgid "Інше"
+msgstr "Andere"
+
+#: app/templates/cv.html:208
+msgid "Вкажіть вашу спеціальність"
+msgstr "Geben Sie Ihre Spezialisierung an"
+
+#: app/templates/cv.html:214
+msgid "Досвід роботи*"
+msgstr "Berufserfahrung*"
+
+#: app/templates/cv.html:217
+msgid "Без досвіду"
+msgstr "Keine Erfahrung"
+
+#: app/templates/cv.html:218
+msgid "Менше 1 року"
+msgstr "Weniger als 1 Jahr"
+
+#: app/templates/cv.html:219
+msgid "1-3 роки"
+msgstr "1-3 Jahre"
+
+#: app/templates/cv.html:220
+msgid "3-5 років"
+msgstr "3-5 Jahre"
+
+#: app/templates/cv.html:221
+msgid "Більше 5 років"
+msgstr "Mehr als 5 Jahre"
+
+#: app/templates/cv.html:225
+msgid "Зарплатні очікування (PLN)*"
+msgstr "Gehaltserwartungen (PLN)*"
+
+#: app/templates/cv.html:231
+msgid "Місто, де хочете працювати*"
+msgstr "Stadt, in der Sie arbeiten möchten*"
+
+#: app/templates/cv.html:236
+msgid "Є житло в Польщі?*"
+msgstr "Haben Sie Wohnraum in Polen?*"
+
+#: app/templates/cv.html:239
+msgid "Так, є своє житло"
+msgstr "Ja, eigene Wohnung"
+
+#: app/templates/cv.html:240
+msgid "Ні, потрібне житло"
+msgstr "Nein, benötige Wohnung"
+
+#: app/templates/cv.html:241
+msgid "Можу знайти сам"
+msgstr "Kann selbst finden"
+
+#: app/templates/cv.html:246
+msgid "Тип роботи*"
+msgstr "Art der Arbeit*"
+
+#: app/templates/cv.html:249
+msgid "Повний день"
+msgstr "Vollzeit"
+
+#: app/templates/cv.html:250
+msgid "Часткова зайнятість"
+msgstr "Teilzeit"
+
+#: app/templates/cv.html:251
+msgid "Робота за змінами"
+msgstr "Schichtarbeit"
+
+#: app/templates/cv.html:252
+msgid "Сезонна робота"
+msgstr "Saisonarbeit"
+
+#: app/templates/cv.html:257
+msgid "Чи готові до переїзду?*"
+msgstr "Bereit zum Umzug?*"
+
+#: app/templates/cv.html:260
+msgid "Так, готовий(а)"
+msgstr "Ja, bereit"
+
+#: app/templates/cv.html:261
+msgid "Ні, не готовий(а)"
+msgstr "Nein, nicht bereit"
+
+#: app/templates/cv.html:262
+msgid "Залежить від умов"
+msgstr "Hängt von den Bedingungen ab"
+
+#: app/templates/cv.html:269 app/templates/cv.html:474
+msgid "Додаткова інформація"
+msgstr "Zusätzliche Informationen"
+
+#: app/templates/cv.html:272
+msgid "Мови, якими володієте*"
+msgstr "Sprachkenntnisse*"
+
+#: app/templates/cv.html:275 app/templates/cv.html:404
+msgid "Польська"
+msgstr "Polnisch"
+
+#: app/templates/cv.html:279 app/templates/cv.html:405
+msgid "Англійська"
+msgstr "Englisch"
+
+#: app/templates/cv.html:283 app/templates/cv.html:406
+msgid "Німецька"
+msgstr "Deutsch"
+
+#: app/templates/cv.html:288
+msgid "Чи є водійське посвідчення?"
+msgstr "Führerschein vorhanden?"
+
+#: app/templates/cv.html:291
+msgid "Немає"
+msgstr "Kein"
+
+#: app/templates/cv.html:292
+msgid "Категорія B"
+msgstr "Klasse B"
+
+#: app/templates/cv.html:293
+msgid "Категорія C"
+msgstr "Klasse C"
+
+#: app/templates/cv.html:294
+msgid "Категорія CE"
+msgstr "Klasse CE"
+
+#: app/templates/cv.html:300
+msgid "Додаткова інформація про себе"
+msgstr "Zusätzliche Angaben über sich"
+
+#: app/templates/cv.html:301
+msgid "Наприклад: досвід роботи, навички, особливі вміння"
+msgstr "Z.B.: Berufserfahrung, Fähigkeiten, besondere Kenntnisse"
+
+#: app/templates/cv.html:305
+msgid "Коли можете приступити до роботи?*"
+msgstr "Wann können Sie die Arbeit aufnehmen?*"
+
+#: app/templates/cv.html:308
+msgid "Негайно"
+msgstr "Sofort"
+
+#: app/templates/cv.html:309
+msgid "Через 1 тиждень"
+msgstr "In 1 Woche"
+
+#: app/templates/cv.html:310
+msgid "Через 2 тижні"
+msgstr "In 2 Wochen"
+
+#: app/templates/cv.html:311
+msgid "Через 1 місяць"
+msgstr "In 1 Monat"
+
+#: app/templates/cv.html:312
+msgid "Можна обговорити"
+msgstr "Kann besprochen werden"
+
+#: app/templates/cv.html:319
+msgid "Надіслати анкету"
+msgstr "Fragebogen senden"
+
+#: app/templates/cv.html:328
+msgid "Попередній перегляд"
+msgstr "Vorschau"
+
+#: app/templates/cv.html:332
+msgid "Ваша анкета з'явиться тут"
+msgstr "Ihr Fragebogen erscheint hier"
+
+#: app/templates/cv.html:333
+msgid "Заповніть форму ліворуч, щоб побачити попередній перегляд"
+msgstr "Füllen Sie das Formular links aus, um die Vorschau zu sehen"
+
+#: app/templates/cv.html:370
+msgid "Будь ласка, заповніть всі обов'язкові поля!"
+msgstr "Bitte füllen Sie alle Pflichtfelder aus!"
+
+#: app/templates/cv.html:375
+msgid ""
+"Вашу анкету успішно надіслано! Наш менеджер зв'яжеться з вами найближчим "
+"часом."
+msgstr ""
+"Ihr Fragebogen wurde erfolgreich versendet! Unser Manager wird sich in Kürze "
+"bei Ihnen melden."
+
+#: app/templates/cv.html:396
+msgid "[Ім'я]"
+msgstr "[Name]"
+
+#: app/templates/cv.html:397
+msgid "[Прізвище]"
+msgstr "[Nachname]"
+
+#: app/templates/cv.html:415
+msgid "[Посада]"
+msgstr "[Position]"
+
+#: app/templates/cv.html:426 app/templates/cv.html:430
+#: app/templates/cv.html:436 app/templates/cv.html:440
+#: app/templates/cv.html:446 app/templates/cv.html:450
+#: app/templates/cv.html:467 app/templates/cv.html:476
+#: app/templates/index.html:546 app/templates/vacancies.html:362
+msgid "Не вказано"
+msgstr "Nicht angegeben"
+
+#: app/templates/cv.html:429
+msgid "Місто"
+msgstr "Stadt"
+
+#: app/templates/cv.html:435
+msgid "Досвід"
+msgstr "Erfahrung"
+
+#: app/templates/cv.html:439
+msgid "Зарплата"
+msgstr "Gehalt"
+
+#: app/templates/cv.html:445
+msgid "Мови"
+msgstr "Sprachen"
+
+#: app/templates/cv.html:449
+msgid "Водійські права"
+msgstr "Führerschein"
+
+#: app/templates/cv.html:461
+msgid "Тип роботи"
+msgstr "Art der Arbeit"
+
+#: app/templates/cv.html:462
+msgid "Житло"
+msgstr "Wohnung"
+
+#: app/templates/cv.html:463
+msgid "Переїзд"
+msgstr "Umzug"
+
+#: app/templates/cv.html:466
+msgid "Може почати"
+msgstr "Kann beginnen"
+
+#: app/templates/faq.html:140
+msgid "Питання та"
+msgstr "Fragen und"
+
+#: app/templates/faq.html:140
+msgid "Відповіді"
+msgstr "Antworten"
+
+#: app/templates/faq.html:141
+msgid ""
+"Тут ви знайдете відповіді на найпоширеніші запитання про наш сервіс. Якщо"
+" у вас залишились питання - зв'яжіться з нами."
+msgstr ""
+"Hier finden Sie Antworten auf die häufigsten Fragen zu unserem Service. "
+"Falls Sie weitere Fragen haben - kontaktieren Sie uns."
+
+#: app/templates/faq.html:150
+msgid "Що таке ваш сервіс?"
+msgstr "Was ist Ihr Service?"
+
+#: app/templates/faq.html:155
+msgid ""
+"Наш сервіс надає зручні інструменти для управління вашими проектами, "
+"покращення командної роботи та підвищення продуктивності. Ми пропонуємо "
+"інноваційні рішення, які допоможуть вашому бізнесу досягти нових висот."
+msgstr ""
+"Unser Service bietet praktische Tools für Projektmanagement, "
+"Teamarbeit und Produktivitätssteigerung. Wir bieten innovative "
+"Lösungen, die Ihrem Unternehmen helfen, neue Höhen zu erreichen."
+
+#: app/templates/faq.html:165
+msgid "Як розпочати роботу з платформою?"
+msgstr "Wie starte ich mit der Plattform?"
+
+#: app/templates/faq.html:171
+msgid "Зареєструйтесь на нашому сайті"
+msgstr "Registrieren Sie sich auf unserer Website"
+
+#: app/templates/faq.html:172
+msgid "Створіть профіль та налаштуйте ваші параметри"
+msgstr "Erstellen Sie ein Profil und konfigurieren Sie Ihre Einstellungen"
+
+#: app/templates/faq.html:173
+msgid "Дотримуйтесь інструкцій у розділі \"Початок роботи\""
+msgstr "Folgen Sie den Anweisungen im Bereich \"Erste Schritte\""
+
+#: app/templates/faq.html:174
+msgid "Перегляньте наші навчальні матеріали"
+msgstr "Sehen Sie sich unsere Schulungsmaterialien an"
+
+#: app/templates/faq.html:175
+msgid "Починайте використовувати всі можливості платформи"
+msgstr "Beginnen Sie, alle Plattformfunktionen zu nutzen"
+
+#: app/templates/faq.html:186
+msgid "Чи є у вас безкоштовний пробний період?"
+msgstr "Gibt es eine kostenlose Testversion?"
+
+#: app/templates/faq.html:191
+msgid ""
+"Так, ми пропонуємо 14-денний безкоштовний пробний період, щоб ви могли "
+"оцінити всі можливості платформи без жодних зобов'язань. Під час пробного"
+" періоду ви матимете доступ до всіх основних функцій."
+msgstr ""
+"Ja, wir bieten einen 14-tägigen kostenlosen Testzeitraum an, damit Sie "
+"alle Plattformfunktionen ohne Verpflichtungen testen können. Während der "
+"Testphase haben Sie Zugriff auf alle Hauptfunktionen."
+
+#: app/templates/faq.html:201
+msgid "Як отримати підтримку у разі проблем?"
+msgstr "Wie erhalte ich Support bei Problemen?"
+
+#: app/templates/faq.html:206
+msgid "Ми пропонуємо кілька способів отримання підтримки:"
+msgstr "Wir bieten mehrere Support-Optionen an:"
+
+#: app/templates/faq.html:208
+msgid "Онлайн-чат:"
+msgstr "Online-Chat:"
+
+#: app/templates/faq.html:208
+msgid "Доступний прямо на сайті з 9:00 до 18:00"
+msgstr "Direkt auf der Website von 9:00 bis 18:00 Uhr verfügbar"
+
+#: app/templates/faq.html:209
+msgid "Email:"
+msgstr "E-Mail:"
+
+#: app/templates/faq.html:209
+msgid "відповідь протягом 24 годин"
+msgstr "Antwort innerhalb von 24 Stunden"
+
+#: app/templates/faq.html:210
+msgid "Телефон:"
+msgstr "Telefon:"
+
+#: app/templates/faq.html:210
+msgid "з 10:00 до 17:00"
+msgstr "von 10:00 bis 17:00 Uhr"
+
+#: app/templates/faq.html:211
+msgid "База знань:"
+msgstr "Wissensdatenbank:"
+
+#: app/templates/faq.html:211
+msgid "Детальні інструкції та FAQ у розділі допомоги"
+msgstr "Detaillierte Anleitungen und FAQ im Hilfebereich"
+
+#: app/templates/index.html:462
+msgid "Легальна робота в Польщі з Top-Staff"
+msgstr "Legale Arbeit in Polen mit Top-Staff"
+
+#: app/templates/index.html:463
+msgid ""
+"Знайдіть роботу мрії з офіційним працевлаштуванням та повним соціальним "
+"пакетом"
+msgstr ""
+"Finden Sie Ihren Traumjob mit offizieller Anstellung und vollem "
+"Sozialpaket"
+
+#: app/templates/index.html:465
+msgid "Пошук вакансій"
+msgstr "Stellensuche"
+
+#: app/templates/index.html:466
+msgid "Легалізація"
+msgstr "Legalisierung"
+
+#: app/templates/index.html:475
+msgid "Чому обирають нас?"
+msgstr "Warum uns wählen?"
+
+#: app/templates/index.html:482
+msgid "Офіційне працевлаштування"
+msgstr "Offizielle Anstellung"
+
+#: app/templates/index.html:483
+msgid ""
+"Повне дотримання трудового законодавства Польщі з усіма соціальними "
+"гарантіями"
+msgstr ""
+"Vollständige Einhaltung des polnischen Arbeitsrechts mit allen "
+"Sozialgarantien"
+
+#: app/templates/index.html:491
+msgid "Конкурентна зарплата"
+msgstr "Wettbewerbsfähiges Gehalt"
+
+#: app/templates/index.html:492
+msgid "Виплати вчасно та в повному обсязі без прихованих умов"
+msgstr "Zahlungen pünktlich und vollständig ohne versteckte Bedingungen"
+
+#: app/templates/index.html:500
+msgid "Допомога з документами"
+msgstr "Hilfe mit Dokumenten"
+
+#: app/templates/index.html:501
+msgid "Оформлення віз, дозволів на роботу та карток побуту"
+msgstr "Beantragung von Visa, Arbeitserlaubnissen und Aufenthaltskarten"
+
+#: app/templates/index.html:509
+msgid "Підтримка 24/7"
+msgstr "24/7 Unterstützung"
+
+#: app/templates/index.html:510
+msgid "Наші менеджери завжди на зв'язку для вирішення будь-яких питань"
+msgstr "Unsere Manager sind immer erreichbar für alle Fragen"
+
+#: app/templates/index.html:520
+msgid "Актуальні вакансії"
+msgstr "Aktuelle Stellenangebote"
+
+#: app/templates/index.html:524
+msgid "Посада, спеціальність..."
+msgstr "Position, Fachgebiet..."
+
+#: app/templates/index.html:525
+msgid "Місто, регіон..."
+msgstr "Stadt, Region..."
+
+#: app/templates/index.html:526
+msgid "Знайти"
+msgstr "Suchen"
+
+#: app/templates/index.html:537 app/templates/vacancies.html:351
+msgid "Нова"
+msgstr "Neu"
+
+#: app/templates/index.html:550
+msgid "За домовленістю"
+msgstr "Nach Vereinbarung"
+
+#: app/templates/index.html:554 app/templates/vacancies.html:364
+msgid "Повна зайнятість"
+msgstr "Vollzeit"
+
+#: app/templates/index.html:564
+msgid "Наразі немає доступних вакансій. Спробуйте інші параметри пошуку."
+msgstr "Derzeit keine verfügbaren Stellen. Versuchen Sie andere Suchparameter."
+
+#: app/templates/index.html:581 app/templates/legalization.html:98
+msgid "Легалізація перебування"
+msgstr "Aufenthaltslegalisierung"
+
+#: app/templates/index.html:585
+msgid "Карта побуту"
+msgstr "Aufenthaltskarte"
+
+#: app/templates/index.html:587
+msgid "На підставі роботи"
+msgstr "Auf Arbeitsbasis"
+
+#: app/templates/index.html:588
+msgid "На підставі навчання"
+msgstr "Auf Studienbasis"
+
+#: app/templates/index.html:589
+msgid "Для ведення бізнесу"
+msgstr "Für Geschäftstätigkeit"
+
+#: app/templates/index.html:590
+msgid "По воссоединению семьи"
+msgstr "Zum Familiennachzug"
+
+#: app/templates/index.html:596
+msgid "Інші документи"
+msgstr "Andere Dokumente"
+
+#: app/templates/index.html:598
+msgid "Національна віза (тип D)"
+msgstr "Nationales Visum (Typ D)"
+
+#: app/templates/index.html:599
+msgid "Дозвіл на роботу"
+msgstr "Arbeitserlaubnis"
+
+#: app/templates/index.html:600
+msgid "Карта резидента ЄС"
+msgstr "EU-Residenzkarte"
+
+#: app/templates/index.html:601
+msgid "Громадянство Польщі"
+msgstr "Polnische Staatsbürgerschaft"
+
+#: app/templates/index.html:615
+msgid "Зв'яжіться з нами"
+msgstr "Kontaktieren Sie uns"
+
+#: app/templates/index.html:618 app/templates/legalization.html:73
+#: app/templates/vacancies.html:451
+msgid "Ваше ім'я"
+msgstr "Ihr Name"
+
+#: app/templates/index.html:619
+msgid "Введіть ваше ім'я"
+msgstr "Geben Sie Ihren Namen ein"
+
+#: app/templates/index.html:626
+msgid "Повідомлення"
+msgstr "Nachricht"
+
+#: app/templates/index.html:627
+msgid "Ваше повідомлення..."
+msgstr "Ihre Nachricht..."
+
+#: app/templates/index.html:629
+msgid "Надіслати заявку"
+msgstr "Anfrage senden"
+
+#: app/templates/index.html:635
+msgid "Контактна інформація"
+msgstr "Kontaktinformation"
+
+#: app/templates/legalization.html:67
+msgid "Офіційна"
+msgstr "Offizielle"
+
+#: app/templates/legalization.html:67
+msgid "легалізація"
+msgstr "Legalisierung"
+
+#: app/templates/legalization.html:67
+msgid "в Польщі"
+msgstr "in Polen"
+
+#: app/templates/legalization.html:68
+msgid ""
+"Професійне оформлення документів для роботи та проживання з гарантією "
+"результату"
+msgstr ""
+"Professionelle Dokumentenbearbeitung für Arbeit und Aufenthalt mit "
+"Erfolgsgarantie"
+
+#: app/templates/legalization.html:78
+msgid "Отримати консультацію"
+msgstr "Beratung erhalten"
+
+#: app/templates/legalization.html:79
+msgid "Наш експерт зв'яжеться з вами протягом 30 хвилин"
+msgstr "Unser Experte meldet sich innerhalb von 30 Minuten bei Ihnen"
+
+#: app/templates/legalization.html:87
+msgid "Наші"
+msgstr "Unsere"
+
+#: app/templates/legalization.html:87
+msgid "послуги"
+msgstr "Dienstleistungen"
+
+#: app/templates/legalization.html:91
+msgid "Оформлення робочої візи"
+msgstr "Beantragung eines Arbeitsvisums"
+
+#: app/templates/legalization.html:92
+msgid ""
+"Повний супровід від подачі документів до отримання візи. Гарантовано "
+"відповідаємо на всі запити уряду."
+msgstr ""
+"Vollständige Begleitung vom Dokumenteneinreichung bis zum Visumerhalt. "
+"Wir garantieren die Beantwortung aller behördlichen Anfragen."
+
+#: app/templates/legalization.html:93 app/templates/legalization.html:100
+msgid "Детальні умови"
+msgstr "Details"
+
+#: app/templates/legalization.html:99
+msgid ""
+"Оформлення дозволу на проживання (Karta Pobytu) для іноземців з "
+"підтримкою на всіх етапах."
+msgstr ""
+"Beantragung einer Aufenthaltserlaubnis (Karta Pobytu) für Ausländer mit "
+"Unterstützung in allen Phasen."
+
+#: app/templates/legalization.html:107
+msgid "Типи"
+msgstr "Arten"
+
+#: app/templates/legalization.html:107
+msgid "документів"
+msgstr "von Dokumenten"
+
+#: app/templates/legalization.html:111
+msgid "Віза типу D"
+msgstr "Typ-D-Visum"
+
+#: app/templates/legalization.html:112
+msgid "Національна віза для тривалого перебування з правом на роботу в Польщі."
+msgstr ""
+"Nationales Visum für Langzeitaufenthalte mit Arbeitserlaubnis in Polen."
+
+#: app/templates/legalization.html:113
+msgid "Докладніше про візу"
+msgstr "Mehr über das Visum"
+
+#: app/templates/legalization.html:118
+msgid "Karta Pobytu"
+msgstr "Aufenthaltskarte"
+
+#: app/templates/legalization.html:119
+msgid "Дозвіл на тимчасове або постійне проживання з правом на роботу."
+msgstr ""
+"Erlaubnis für vorübergehenden oder dauerhaften Aufenthalt mit "
+"Arbeitserlaubnis."
+
+#: app/templates/legalization.html:120
+msgid "Вимоги до оформлення"
+msgstr "Anforderungen"
+
+#: app/templates/legalization.html:125
+msgid "Запрошення на роботу"
+msgstr "Arbeitseinladung"
+
+#: app/templates/legalization.html:126
+msgid "Офіційний документ від роботодавця, необхідний для отримання робочої візи."
+msgstr ""
+"Offizielles Dokument des Arbeitgebers, erforderlich für die Beantragung "
+"eines Arbeitsvisums."
+
+#: app/templates/legalization.html:127
+msgid "Як отримати"
+msgstr "So erhalten Sie es"
+
+#: app/templates/legalization.html:134
+msgid "Чому обирають"
+msgstr "Warum wählen"
+
+#: app/templates/legalization.html:134
+msgid "нас"
+msgstr "uns"
+
+#: app/templates/legalization.html:139
+msgid "Юридична чистота"
+msgstr "Rechtliche Sauberkeit"
+
+#: app/templates/legalization.html:140
+msgid "Всі документи оформляються строго згідно з чинним законодавством Польщі"
+msgstr ""
+"Alle Dokumente werden streng nach geltendem polnischem Recht "
+"ausgestellt."
+
+#: app/templates/legalization.html:146
+msgid "Експрес-оформлення"
+msgstr "Express-Abwicklung"
+
+#: app/templates/legalization.html:147
+msgid "Прискорені терміни завдяки прямим контактам з урядовими установами"
+msgstr ""
+"Beschleunigte Fristen dank direkter Kontakte zu Regierungsbehörden."
+
+#: app/templates/legalization.html:153
+msgid "Повна відповідальність"
+msgstr "Volle Verantwortung"
+
+#: app/templates/legalization.html:154
+msgid "Несемо юридичну відповідальність за правильність оформлення документів"
+msgstr ""
+"Wir übernehmen die rechtliche Verantwortung für die korrekte "
+"Dokumentenausstellung."
+
+#: app/templates/legalization.html:161
+msgid "Етапи"
+msgstr "Schritte"
+
+#: app/templates/legalization.html:161
+msgid "роботи"
+msgstr "der Arbeit"
+
+#: app/templates/legalization.html:166
+msgid "Консультація"
+msgstr "Beratung"
+
+#: app/templates/legalization.html:167
+msgid ""
+"Безкоштовна детальна консультація з підбором оптимального варіанту "
+"легалізації"
+msgstr ""
+"Kostenlose detaillierte Beratung zur Auswahl der optimalen "
+"Legaliserungsoption."
+
+#: app/templates/legalization.html:173
+msgid "Підготовка"
+msgstr "Vorbereitung"
+
+#: app/templates/legalization.html:174
+msgid "Перевірка та підготовка всіх необхідних документів згідно з вимогами"
+msgstr ""
+"Überprüfung und Vorbereitung aller erforderlichen Dokumente gemäß den "
+"Anforderungen."
+
+#: app/templates/legalization.html:180
+msgid "Оформлення"
+msgstr "Beantragung"
+
+#: app/templates/legalization.html:181
+msgid "Подача документів до відповідних установ та супровід до отримання рішення"
+msgstr ""
+"Einreichung der Dokumente bei den zuständigen Stellen und Begleitung bis "
+"zur Entscheidung."
+
+#: app/templates/legalization.html:188
+msgid "Поширені"
+msgstr "Häufige"
+
+#: app/templates/legalization.html:188
+msgid "питання"
+msgstr "Fragen"
+
+#: app/templates/legalization.html:193
+msgid "Які документи потрібні для початку процесу?"
+msgstr "Welche Dokumente werden für den Prozessbeginn benötigt?"
+
+#: app/templates/legalization.html:198
+msgid ""
+"Основний перелік включає закордонний паспорт, фотографії, довідку про "
+"несудимість, медичне страхування та документи від роботодавця. Точний "
+"список формується індивідуально під кожну ситуацію."
+msgstr ""
+"Die Grundliste umfasst Reisepass, Fotos, Führungszeugnis, "
+"Krankenversicherung und Dokumente des Arbeitgebers. Die genaue Liste wird "
+"individuell für jede Situation erstellt."
+
+#: app/templates/legalization.html:205
+msgid "Чи можна оформити документи без особистої присутності?"
+msgstr "Können Dokumente ohne persönliche Anwesenheit beantragt werden?"
+
+#: app/templates/legalization.html:210
+msgid ""
+"Більшість етапів можна пройти дистанційно, але подача документів на візу "
+"та отримання картки побуту вимагають особистої присутності. Ми "
+"супроводжуємо клієнтів на всіх етапах."
+msgstr ""
+"Die meisten Schritte können remote durchgeführt werden, aber die "
+"Visumantragstellung und der Erhalt der Aufenthaltskarte erfordern eine "
+"persönliche Anwesenheit. Wir begleiten Kunden in allen Phasen."
+
+#: app/templates/legalization.html:217
+msgid "Які гарантії успішного оформлення?"
+msgstr "Welche Garantien gibt es für eine erfolgreiche Beantragung?"
+
+#: app/templates/legalization.html:222
+msgid ""
+"Ми надаємо 100% гарантію коректності оформлення документів. У разі "
+"відмови (за необ'єктивних причин) повертаємо кошти. За 5 років роботи у "
+"нас 97% успішних кейсів."
+msgstr ""
+"Wir geben eine 100%-Garantie für die korrekte Dokumentenausstellung. Bei "
+"Ablehnung (aus nicht objektiven Gründen) erstatten wir das Geld. In 5 "
+"Jahren Arbeit haben wir 97% erfolgreiche Fälle."
+
+#: app/templates/login.html:127
+msgid "Вход администратора"
+msgstr "Administrator-Login"
+
+#: app/templates/login.html:144
+msgid "Логин"
+msgstr "Benutzername"
+
+#: app/templates/login.html:145
+msgid "Введите ваш логин"
+msgstr "Geben Sie Ihren Benutzernamen ein"
+
+#: app/templates/login.html:149
+msgid "Пароль"
+msgstr "Passwort"
+
+#: app/templates/login.html:150
+msgid "Введите ваш пароль"
+msgstr "Geben Sie Ihr Passwort ein"
+
+#: app/templates/login.html:154
+msgid "Войти"
+msgstr "Anmelden"
+
+#: app/templates/login.html:163
+msgid "Анимация элементов при загрузке"
+msgstr "Animation von Elementen beim Laden"
+
+#: app/templates/post.html:244 app/templates/post.html:259
+msgid "мин. чтения"
+msgstr "Min. Lesezeit"
+
+#: app/templates/post.html:255
+msgid "просмотров"
+msgstr "Aufrufe"
+
+#: app/templates/post.html:265
+msgid "Вернуться к списку постов"
+msgstr "Zurück zur Beitragsliste"
+
+#: app/templates/post.html:270
+msgid "Плавное появление изображений при скролле"
+msgstr "Sanftes Erscheinen von Bildern beim Scrollen"
+
+#: app/templates/vacancies.html:317
+msgid "Знайдіть роботу мрії в Польщі"
+msgstr "Finden Sie Ihren Traumjob in Polen"
+
+#: app/templates/vacancies.html:318
+msgid "Топові вакансії з офіційним працевлаштуванням та соціальним пакетом"
+msgstr ""
+"Top-Stellenangebote mit offizieller Beschäftigung und Sozialpaket"
+
+#: app/templates/vacancies.html:322
+msgid "Посада, місто або компанія..."
+msgstr "Position, Stadt oder Unternehmen..."
+
+#: app/templates/vacancies.html:324
+msgid "Пошук"
+msgstr "Suche"
+
+#: app/templates/vacancies.html:363
+msgid "Договірна"
+msgstr "Verhandelbar"
+
+#: app/templates/vacancies.html:373
+msgid "Наразі немає доступних вакансій за обраними критеріями."
+msgstr ""
+"Derzeit gibt es keine verfügbaren Stellen nach den ausgewählten "
+"Kriterien."
+
+#: app/templates/vacancies.html:420
+msgid "Чому варто співпрацювати з нами?"
+msgstr "Warum mit uns zusammenarbeiten?"
+
+#: app/templates/vacancies.html:424
+msgid "Офіційний договір та легальне працевлаштування"
+msgstr "Offizieller Vertrag und legale Beschäftigung"
+
+#: app/templates/vacancies.html:428
+msgid "Допомога з оформленням документів"
+msgstr "Hilfe bei der Dokumentenausstellung"
+
+#: app/templates/vacancies.html:432
+msgid "Безкоштовний підбір вакансій"
+msgstr "Kostenlose Stellenvermittlung"
+
+#: app/templates/vacancies.html:436
+msgid "Підтримка 24/7 під час роботи"
+msgstr "24/7-Unterstützung während der Arbeit"
+
+#: app/templates/vacancies.html:440
+msgid "Допомога з житлом та переїздом"
+msgstr "Hilfe bei Wohnung und Umzug"
+
+#: app/templates/vacancies.html:446
+msgid "Персональна консультація"
+msgstr "Persönliche Beratung"
+
+#: app/templates/vacancies.html:447
+msgid "Залиште свої контакти, і наш менеджер підбере для вас найкращі варіанти"
+msgstr ""
+"Hinterlassen Sie Ihre Kontaktdaten und unser Manager findet die besten "
+"Optionen für Sie"
+
+#: app/templates/vacancies.html:454
+msgid "Номер телефону"
+msgstr "Telefonnummer"
+
+#: app/templates/vacancies.html:457
+msgid "Замовити дзвінок"
+msgstr "Rückruf bestellen"
+
+#: app/templates/vacancies.html:466
+msgid "Анимация карточек при загрузке"
+msgstr "Animation von Karten beim Laden"
+
+#: app/templates/vacancies.html:480
+msgid "Активный фильтр"
+msgstr "Aktiver Filter"
+
+#: app/templates/vacancy_detail.html:11
+msgid "Главная"
+msgstr "Startseite"
+
+#: app/templates/vacancy_detail.html:24
+msgid "Опубликовано"
+msgstr "Veröffentlicht"
+
+#: app/templates/vacancy_detail.html:29
+msgid "Обновлено"
+msgstr "Aktualisiert"
+
+#: app/templates/vacancy_detail.html:37
+msgid "Описание вакансии"
+msgstr "Stellenbeschreibung"
+
+#: app/templates/vacancy_detail.html:48
+msgid "Требования"
+msgstr "Anforderungen"
+
+#: app/templates/vacancy_detail.html:60
+msgid "Мы предлагаем"
+msgstr "Wir bieten"
+
+#: app/templates/vacancy_detail.html:73
+msgid "Откликнуться на вакансию"
+msgstr "Auf die Stelle bewerben"
+
+#: app/templates/vacancy_detail.html:79
+msgid "ФИО"
+msgstr "Vor- und Nachname"
+
+#: app/templates/vacancy_detail.html:81
+msgid "Иванов Иван Иванович"
+msgstr "Iwanow Iwan Iwanowitsch"
+
+#: app/templates/vacancy_detail.html:97
+msgid "Сопроводительное письмо"
+msgstr "Anschreiben"
+
+#: app/templates/vacancy_detail.html:99
+msgid "Ваше сопроводительное письмо..."
+msgstr "Ihr Anschreiben..."
+
+#: app/templates/vacancy_detail.html:103
+msgid "Резюме"
+msgstr "Lebenslauf"
+
+#: app/templates/vacancy_detail.html:105
+msgid "Поддерживаются файлы PDF, DOC, DOCX до 5MB"
+msgstr "PDF, DOC, DOCX-Dateien bis 5MB werden unterstützt"
+
+#: app/templates/vacancy_detail.html:109
+msgid "Отправить заявку"
+msgstr "Bewerbung senden"
+

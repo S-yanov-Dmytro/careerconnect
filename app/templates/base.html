@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="{{ g.lang_code|default('ru') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Staff - Кадровое агентство по трудоустройству в Польше</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v='1.0.0') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vacancies.css', v='1.0.0') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/legalization.css', v='1.0.0') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-sA+tdC5ioW0hVLl5yGV9zMJ5tc+gHkMs1bEe+3uP5MQ="
+  crossorigin=""
+/>
+
+<!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-o9N1jE2Lkwdq3vZYYyVCH5V7EvT5w06uB6Zog9gI1hA="
+  crossorigin=""
+  defer
+></script>
+    <style>
+        /* ==================== */
+/* Modern Header Styles */
+/* ==================== */
+
+:root {
+  --header-bg: #ffffff;
+  --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --nav-link-color: #2d3748;
+  --nav-link-hover: #4361ee;
+  --nav-link-active: #3f37c9;
+  --nav-link-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Header Styles */
+.navbar {
+  padding: 1.5rem 0;
+  background-color: var(--header-bg) !important;
+  transition: all 0.4s ease;
+  box-shadow: var(--header-shadow);
+}
+
+/* Logo Styles */
+.navbar-brand img {
+  height: 42px;
+  transition: all 0.3s ease;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+  position: relative;
+  font-weight: 500;
+  color: var(--nav-link-color) !important;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.25rem;
+  transition: var(--nav-link-transition);
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.2rem;
+  width: 0;
+  height: 2px;
+  background: var(--nav-link-hover);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover:before {
+  width: calc(100% - 2.4rem);
+}
+
+/* Active Link */
+.navbar-nav .nav-link.active {
+  color: var(--nav-link-active) !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link.active:before {
+  width: calc(100% - 2.4rem);
+  background: var(--nav-link-active);
+}
+
+/* Scrolled State */
+.navbar.scrolled {
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 36px;
+}
+
+/* CTA Button */
+.header-cta {
+  background: linear-gradient(135deg, var(--nav-link-hover) 0%, var(--nav-link-active) 100%);
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  color: white !important;
+  font-weight: 500;
+  transition: var(--nav-link-transition);
+  margin-left: 1rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+}
+
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+  color: white !important;
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: var(--nav-link-color);
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--nav-link-color);
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon:before {
+  transform: translateY(-6px);
+}
+
+.navbar-toggler-icon:after {
+  transform: translateY(6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem;
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0;
+  }
+
+  .header-cta {
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+        }
+        .navbar-brand .logo-full {
+            display: inline-block;
+        }
+        .navbar-brand .logo-sygnet {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .navbar-brand .logo-full {
+                display: none;
+            }
+            .navbar-brand .logo-sygnet {
+                display: inline-block;
+                height: 45px;
+            }
+        }
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .lang-switcher .lang-link {
+            color: #666;
+            text-decoration: none;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switcher .lang-link:hover {
+            color: #007bff;
+            background: rgba(0,123,255,0.1);
+        }
+
+        .lang-switcher .lang-link.active {
+            color: #007bff;
+            background: rgba(0,123,255,0.1);
+            font-weight: 600;
+        }
+
+        .lang-switcher .separator {
+            color: #ddd;
+            margin: 0 2px;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                margin: 10px 0;
+                justify-content: center;
+            }
+        }
+          /* Соц мережі футер */
+  .social-footer {
+    margin-top: 80px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #1a237e;
+    border-radius: 0 0 16px 16px;
+    color: white;
+  }
+  .social-footer p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .social-icons {
+    display: inline-flex;
+    gap: 25px;
+    font-size: 1.8rem;
+  }
+  .social-icons a {
+    color: white;
+    transition: color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #64b5f6;
+  }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                    <img src="{{ url_for('static', filename='img/logo.png', v='1.0.0') }}" alt="Top-Staff" class="logo-full">
+                    <img src="{{ url_for('static', filename='img/sygnet.jpeg', v='1.0.0') }}" alt="Top-Staff" class="logo-sygnet">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.about') }}">{{ _('О нас') }}</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.cvcreator') }}">{{ _('Ищу работу') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.vacancies') }}">{{ _('Вакансии') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.legalization') }}">{{ _('Легализация') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('blog.index') }}">{{ _('Блог') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.faq') }}">{{ _('FAQ') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.contact') }}">{{ _('Контакты') }}</a>
+                        </li>
+                    </ul>
+                    <div class="lang-switcher">
+                        <a href="{{ url_for(request.endpoint, lang_code='ru', **request.view_args|default({})) }}"
+                           class="lang-link {{ 'active' if g.lang_code|default('ru') == 'ru' }}">RU</a>
+                        <span class="separator">|</span>
+                        <a href="{{ url_for(request.endpoint, lang_code='pl', **request.view_args|default({})) }}"
+                           class="lang-link {{ 'active' if g.lang_code == 'pl' }}">PL</a>
+                        <span class="separator">|</span>
+                        <a href="{{ url_for(request.endpoint, lang_code='en', **request.view_args|default({})) }}"
+                           class="lang-link {{ 'active' if g.lang_code == 'en' }}">EN</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="fade-in">
+        {% block content %}{% endblock %}
+        {% block contact %}{% endblock %}
+    </main>
+
+    <!-- Соц мережі футер -->
+        <footer class="social-footer" role="contentinfo" aria-label="Соціальні мережі">
+          <p>{{ _('Слідкуйте за нами в соцмережах') }}</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://t.me/yourchannel" target="_blank" rel="noopener" aria-label="Telegram">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

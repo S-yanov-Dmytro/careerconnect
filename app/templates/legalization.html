@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  :root {
+    --primary: #5e72e4;
+    --primary-dark: #4a5acf;
+    --primary-light: #7e8ee9;
+    --secondary: #f5365c;
+    --accent: #11cdef;
+    --light: #f8f9fa;
+    --dark: #32325d;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+
+  /* Hero section */
+  .legalization-hero {
+    background: linear-gradient(rgba(50, 50, 93, 0.7), rgba(50, 50, 93, 0.8)),
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 1.5rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+
+  .legalization-hero h1 {
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  .legalization-hero h1 strong {
+    color: var(--accent);
+  }
+
+  .legalization-hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* ... (остальные стили остаются без изменений) ... */
+</style>
+
+<div class="legalization-hero">
+  <div class="container">
+    <h1>{{ _('Офіційна') }} <strong>{{ _('легалізація') }}</strong> {{ _('в Польщі') }}</h1>
+    <p>{{ _('Професійне оформлення документів для роботи та проживання з гарантією результату') }}</p>
+
+    <div class="contact-form-container">
+      <form class="contact-form" method="post" action="#">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="{{ _('Ваше ім\'я') }}" required>
+        </div>
+        <div class="mb-3">
+          <input type="tel" class="form-control" placeholder="+48 ХХХ ХХХ ХХХ" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">{{ _('Отримати консультацію') }}</button>
+        <p class="form-text mt-2">{{ _('Наш експерт зв\'яжеться з вами протягом 30 хвилин') }}</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <section class="legalization-options mb-5">
+    <h2 class="section-title">{{ _('Наші') }} <strong>{{ _('послуги') }}</strong></h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="option-card">
+          <h3>{{ _('Оформлення робочої візи') }}</h3>
+          <p>{{ _('Повний супровід від подачі документів до отримання візи. Гарантовано відповідаємо на всі запити уряду.') }}</p>
+          <a href="#" class="btn btn-outline-primary">{{ _('Детальні умови') }}</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="option-card">
+          <h3>{{ _('Легалізація перебування') }}</h3>
+          <p>{{ _('Оформлення дозволу на проживання (Karta Pobytu) для іноземців з підтримкою на всіх етапах.') }}</p>
+          <a href="#" class="btn btn-outline-primary">{{ _('Детальні умови') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="document-types mb-5">
+    <h2 class="section-title">{{ _('Типи') }} <strong>{{ _('документів') }}</strong></h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="document-card">
+          <h3>{{ _('Віза типу D') }}</h3>
+          <p>{{ _('Національна віза для тривалого перебування з правом на роботу в Польщі.') }}</p>
+          <a href="#" class="btn btn-link">{{ _('Докладніше про візу') }}</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="document-card">
+          <h3>{{ _('Karta Pobytu') }}</h3>
+          <p>{{ _('Дозвіл на тимчасове або постійне проживання з правом на роботу.') }}</p>
+          <a href="#" class="btn btn-link">{{ _('Вимоги до оформлення') }}</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="document-card">
+          <h3>{{ _('Запрошення на роботу') }}</h3>
+          <p>{{ _('Офіційний документ від роботодавця, необхідний для отримання робочої візи.') }}</p>
+          <a href="#" class="btn btn-link">{{ _('Як отримати') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantages mb-5">
+    <h2 class="section-title">{{ _('Чому обирають') }} <strong>{{ _('нас') }}</strong></h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="advantage-card">
+          <i class="fas fa-check-circle"></i>
+          <h4>{{ _('Юридична чистота') }}</h4>
+          <p>{{ _('Всі документи оформляються строго згідно з чинним законодавством Польщі') }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="advantage-card">
+          <i class="fas fa-clock"></i>
+          <h4>{{ _('Експрес-оформлення') }}</h4>
+          <p>{{ _('Прискорені терміни завдяки прямим контактам з урядовими установами') }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="advantage-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>{{ _('Повна відповідальність') }}</h4>
+          <p>{{ _('Несемо юридичну відповідальність за правильність оформлення документів') }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process mb-5">
+    <h2 class="section-title">{{ _('Етапи') }} <strong>{{ _('роботи') }}</strong></h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="process-step">
+          <span class="step-number">1</span>
+          <h4>{{ _('Консультація') }}</h4>
+          <p>{{ _('Безкоштовна детальна консультація з підбором оптимального варіанту легалізації') }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-step">
+          <span class="step-number">2</span>
+          <h4>{{ _('Підготовка') }}</h4>
+          <p>{{ _('Перевірка та підготовка всіх необхідних документів згідно з вимогами') }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-step">
+          <span class="step-number">3</span>
+          <h4>{{ _('Оформлення') }}</h4>
+          <p>{{ _('Подача документів до відповідних установ та супровід до отримання рішення') }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq mb-5">
+    <h2 class="section-title">{{ _('Поширені') }} <strong>{{ _('питання') }}</strong></h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item mb-3">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+            {{ _('Які документи потрібні для початку процесу?') }}
+          </button>
+        </h3>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ _('Основний перелік включає закордонний паспорт, фотографії, довідку про несудимість, медичне страхування та документи від роботодавця. Точний список формується індивідуально під кожну ситуацію.') }}
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item mb-3">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+            {{ _('Чи можна оформити документи без особистої присутності?') }}
+          </button>
+        </h3>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ _('Більшість етапів можна пройти дистанційно, але подача документів на візу та отримання картки побуту вимагають особистої присутності. Ми супроводжуємо клієнтів на всіх етапах.') }}
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item mb-3">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+            {{ _('Які гарантії успішного оформлення?') }}
+          </button>
+        </h3>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ _('Ми надаємо 100% гарантію коректності оформлення документів. У разі відмови (за необ\'єктивних причин) повертаємо кошти. За 5 років роботи у нас 97% успішних кейсів.') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Анимация карточек при загрузке
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = (elements) => {
+      elements.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 150 * i);
+      });
+    };
+
+    // Анимация карточек услуг
+    animateElements(document.querySelectorAll('.option-card'));
+
+    // Анимация других секций с задержкой
+    setTimeout(() => animateElements(document.querySelectorAll('.document-card')), 300);
+    setTimeout(() => animateElements(document.querySelectorAll('.advantage-card')), 600);
+    setTimeout(() => animateElements(document.querySelectorAll('.process-step')), 900);
+    setTimeout(() => animateElements(document.querySelectorAll('.price-card')), 1200);
+  });
+</script>
+{% endblock %}

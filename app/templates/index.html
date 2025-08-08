@@ -1,0 +1,702 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  :root {
+    --primary: #4285F4;
+    --primary-dark: #3367D6;
+    --primary-light: #8AB4F8;
+    --secondary: #34A853;
+    --accent: #FBBC05;
+    --light: #f8f9fa;
+    --dark: #202124;
+    --gray: #5F6368;
+    --light-gray: #E8EAED;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.15);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+
+  /* Hero section */
+  .hero-section {
+    background: linear-gradient(135deg, rgba(66,133,244,0.9) 0%, rgba(51,103,214,0.9) 100%),
+                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    padding: 8rem 0;
+    color: white;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .hero-section h1 {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .hero-section p.lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-hero {
+    border-radius: var(--radius-lg);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+  }
+
+  .btn-hero-primary {
+    background: white;
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-hero-primary:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(255,255,255,0.3);
+  }
+
+  .btn-hero-outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+
+  .btn-hero-outline:hover {
+    background: white;
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+  }
+
+  /* About section */
+  .about-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .section-title {
+    font-weight: 800;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid var(--light-gray);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.75rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+
+  .feature-card p {
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* Vacancies section */
+  .vacancies-section {
+    background: var(--light);
+    padding: 6rem 0;
+  }
+
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .search-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 250px;
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+  }
+
+  .search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(66,133,244,0.25);
+  }
+
+  .search-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0 2rem;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+
+  .search-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .vacancy-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+  }
+
+  .vacancy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+  }
+
+  .vacancy-badge {
+    background: var(--accent);
+    color: var(--dark);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .vacancy-date {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+
+  .vacancy-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: var(--dark);
+  }
+
+  .vacancy-description {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .vacancy-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .vacancy-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--dark);
+  }
+
+  .vacancy-detail i {
+    color: var(--primary);
+    width: 16px;
+    text-align: center;
+  }
+
+  /* Legalization section */
+  .legalization-section {
+    padding: 6rem 0;
+    background: white;
+  }
+
+  .document-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+  }
+
+  .document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .document-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+  }
+
+  .document-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .document-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.75rem;
+    position: relative;
+    color: var(--gray);
+  }
+
+  .document-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  /* Contacts section */
+  .contacts-section {
+    padding: 6rem 0;
+    background: var(--light);
+  }
+
+  .contact-form {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--light-gray);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+  }
+
+  .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(66,133,244,0.25);
+  }
+
+  .submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    width: 100%;
+    transition: var(--transition);
+  }
+
+  .submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item i {
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .social-link {
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: var(--transition);
+  }
+
+  .social-link:hover {
+    color: var(--primary-dark);
+    transform: scale(1.2);
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .hero-section {
+      padding: 4rem 0;
+    }
+
+    .about-section,
+    .vacancies-section,
+    .legalization-section,
+    .contacts-section {
+      padding: 4rem 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero-section p.lead {
+      font-size: 1.1rem;
+    }
+
+    .btn-hero {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-form {
+      flex-direction: column;
+    }
+
+    .search-btn {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ _('Легальна робота в Польщі з Top-Staff') }}</h1>
+      <p class="lead">{{ _('Знайдіть роботу мрії з офіційним працевлаштуванням та повним соціальним пакетом') }}</p>
+      <div class="cta-buttons">
+        <a href="#vacancies" class="btn btn-hero btn-hero-primary">{{ _('Пошук вакансій') }}</a>
+        <a href="#legalization" class="btn btn-hero btn-hero-outline">{{ _('Легалізація') }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+  <div class="container">
+    <h2 class="section-title">{{ _('Чому обирають нас?') }}</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>{{ _('Офіційне працевлаштування') }}</h3>
+          <p>{{ _('Повне дотримання трудового законодавства Польщі з усіма соціальними гарантіями') }}</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-euro-sign"></i>
+          </div>
+          <h3>{{ _('Конкурентна зарплата') }}</h3>
+          <p>{{ _('Виплати вчасно та в повному обсязі без прихованих умов') }}</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3>{{ _('Допомога з документами') }}</h3>
+          <p>{{ _('Оформлення віз, дозволів на роботу та карток побуту') }}</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>{{ _('Підтримка 24/7') }}</h3>
+          <p>{{ _('Наші менеджери завжди на зв\'язку для вирішення будь-яких питань') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vacancies Section -->
+<section class="vacancies-section" id="vacancies">
+  <div class="container">
+    <h2 class="section-title">{{ _('Актуальні вакансії') }}</h2>
+
+    <div class="search-container">
+      <form class="search-form" method="GET" action="{{ url_for('main.vacancies') }}">
+        <input type="text" name="position" class="search-input" placeholder="{{ _('Посада, спеціальність...') }}" value="{{ request.args.get('position', '') }}">
+        <input type="text" name="location" class="search-input" placeholder="{{ _('Місто, регіон...') }}" value="{{ request.args.get('location', '') }}">
+        <button type="submit" class="search-btn">{{ _('Знайти') }}</button>
+      </form>
+    </div>
+
+    <div class="row">
+      {% if vacancies %}
+        {% for vacancy in vacancies %}
+        <div class="col-lg-6">
+          <div class="vacancy-card">
+            <div>
+              {% if (now - vacancy.created_at).days < 7 %}
+                <span class="vacancy-badge">{{ _('Нова') }}</span>
+              {% endif %}
+              <span class="vacancy-date">{{ vacancy.created_at.strftime('%d.%m.%Y') }}</span>
+            </div>
+            <h3 class="vacancy-title">{{ vacancy.title }}</h3>
+            <p class="vacancy-description">{{ vacancy.description|truncate(150) }}</p>
+            <div class="vacancy-details">
+              <div class="vacancy-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>{{ vacancy.location or _('Не вказано') }}</span>
+              </div>
+              <div class="vacancy-detail">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>{{ vacancy.salary or _('За домовленістю') }}</span>
+              </div>
+              <div class="vacancy-detail">
+                <i class="fas fa-clock"></i>
+                <span>{{ vacancy.employment_type or _('Повна зайнятість') }}</span>
+              </div>
+            </div>
+            <a href="{{ url_for('admin.view_vacancy', vacancy_id=vacancy._id) }}" class="btn btn-primary mt-3">{{ _('Детальніше') }}</a>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-12">
+          <div class="alert alert-info">
+            {{ _('Наразі немає доступних вакансій. Спробуйте інші параметри пошуку.') }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if vacancies and vacancies|length >= 4 %}
+    <div class="text-center mt-5">
+      <a href="{{ url_for('main.vacancies') }}" class="btn btn-primary btn-lg">{{ _('Всі вакансії') }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Legalization Section -->
+<section class="legalization-section" id="legalization">
+  <div class="container">
+    <h2 class="section-title">{{ _('Легалізація перебування') }}</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="document-card">
+          <h3>{{ _('Карта побуту') }}</h3>
+          <ul class="document-list">
+            <li>{{ _('На підставі роботи') }}</li>
+            <li>{{ _('На підставі навчання') }}</li>
+            <li>{{ _('Для ведення бізнесу') }}</li>
+            <li>{{ _('По воссоединению семьи') }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="document-card">
+          <h3>{{ _('Інші документи') }}</h3>
+          <ul class="document-list">
+            <li>{{ _('Національна віза (тип D)') }}</li>
+            <li>{{ _('Дозвіл на роботу') }}</li>
+            <li>{{ _('Карта резидента ЄС') }}</li>
+            <li>{{ _('Громадянство Польщі') }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacts Section -->
+<section class="contacts-section" id="contacts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="contact-form">
+          <h2 class="section-title">{{ _('Зв\'яжіться з нами') }}</h2>
+          <form>
+            <div class="form-group">
+              <label for="name" class="form-label">{{ _('Ваше ім\'я') }}</label>
+              <input type="text" id="name" class="form-control" placeholder="{{ _('Введіть ваше ім\'я') }}" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="form-label">{{ _('Телефон') }}</label>
+              <input type="tel" id="phone" class="form-control" placeholder="+48 XXX XXX XXX" required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">{{ _('Повідомлення') }}</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="{{ _('Ваше повідомлення...') }}"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">{{ _('Надіслати заявку') }}</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-info">
+          <h3>{{ _('Контактна інформація') }}</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <p>ul. Przykładowa 12, 00-001 Warszawa, Polska</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <p>+48 123 456 789</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <p>info@top-staff.pl</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Анимация элементов при загрузке
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateOnScroll = (elements) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    };
+
+    // Анимация всех карточек и секций
+    animateOnScroll(document.querySelectorAll(
+      '.feature-card, .vacancy-card, .document-card, .contact-form, .contact-info'
+    ));
+  });
+</script>
+{% endblock %}

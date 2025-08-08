@@ -1,0 +1,841 @@
+{% extends "base.html" %}
+
+{% block contact %}
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #f5f7ff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .navbar {
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 42px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1.2rem !important;
+            color: var(--dark) !important;
+            position: relative;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1.2rem;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:before {
+            width: calc(100% - 2.4rem);
+        }
+
+        .nav-link.active:before {
+            width: calc(100% - 2.4rem);
+        }
+
+        /* Hero Section */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center right;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .contact-hero .lead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .contact-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Contact Cards */
+        .contact-info-cards {
+            margin-top: -4rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-card i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+
+        .contact-card h5 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-card p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        /* Main Content */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        /* Map */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .leaflet-container {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* Office Info */
+        .office-info {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--light-gray);
+        }
+
+        .office-info h3 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1.75rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .office-info h3 i {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            width: 24px;
+            text-align: center;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+
+        .info-item span {
+            color: var(--dark);
+            font-weight: 500;
+            flex: 1;
+        }
+
+        /* Working Hours */
+        .working-hours {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--light-gray);
+        }
+
+        .working-hours h4 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .working-hours h4 i {
+            margin-right: 0.75rem;
+            color: var(--primary);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-day {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .hours-time {
+            color: var(--gray);
+        }
+
+        .hours-time.open {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .hours-time.closed {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            border: 1px solid var(--light-gray);
+        }
+
+        .contact-form h2 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-form h2 i {
+            margin-right: 0.75rem;
+            color: var(--primary);
+        }
+
+        .contact-form .form-label {
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+            padding: 0.85rem 1.25rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 0.85rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.05rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+        }
+
+        /* Social Links */
+        .social-section {
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.25rem;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 25px rgba(67, 97, 238, 0.3);
+            color: white;
+        }
+
+        .social-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .social-subtitle {
+            color: var(--gray);
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .contact-hero {
+                padding: 5rem 0 3rem;
+                text-align: center;
+            }
+
+            .contact-hero:before {
+                width: 100%;
+                opacity: 0.05;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-hero .lead {
+                margin: 0 auto;
+            }
+
+            .section-padding {
+                padding: 4rem 0;
+            }
+
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .contact-hero {
+                padding: 4rem 0 2rem;
+            }
+
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info-cards {
+                margin-top: -2rem;
+            }
+
+            .contact-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .section-padding {
+                padding: 3rem 0;
+            }
+
+            .office-info,
+            .contact-form {
+                padding: 1.75rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center text-lg-start animate">
+                        <h1>{{ _('Свяжитесь с нами') }}</h1>
+                        <p class="lead">{{ _('Мы готовы помочь вам найти работу в Польше. Наша команда экспертов ответит на все ваши вопросы и предложит лучшие варианты.') }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Cards -->
+        <section class="contact-info-cards">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4 animate delay-1">
+                        <div class="card contact-card h-100">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>{{ _('Наш офис') }}</h5>
+                            <p>{{ _('Люблин, ул. Graniczna 4/22<br>Польша') }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate delay-2">
+                        <div class="card contact-card h-100">
+                            <i class="fas fa-phone"></i>
+                            <h5>{{ _('Телефон') }}</h5>
+                            <p>+mafaka6</p>
+                            <small class="text-muted">{{ _('Звонки и WhatsApp') }}</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate delay-3">
+                        <div class="card contact-card h-100">
+                            <i class="fas fa-clock"></i>
+                            <h5>{{ _('Часы работы') }}</h5>
+                            <p>{{ _('Понедельник – Пятница<br>09:00 – 17:00') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <!-- Office Info -->
+                        <div class="office-info animate">
+                            <h3><i class="fas fa-building"></i>{{ _('Наш офис в Люблине') }}</h3>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{ _('ул. Graniczna 4/22, Люблин, Польша') }}</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+mafaka6</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@mafaka.com</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-globe"></i>
+                                <span>www.mafaka.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-container animate delay-1">
+                            <div id="map"></div>
+                        </div>
+
+                        <!-- Working Hours -->
+                        <div class="working-hours animate delay-2">
+                            <h4><i class="fas fa-clock"></i>{{ _('График работы') }}</h4>
+                            <div class="hours-row">
+                                <span class="hours-day">{{ _('Понедельник - Пятница') }}</span>
+                                <span class="hours-time open">{{ _('09:00 - 17:00') }}</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day">{{ _('Суббота') }}</span>
+                                <span class="hours-time closed">{{ _('Выходной') }}</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day">{{ _('Воскресенье') }}</span>
+                                <span class="hours-time closed">{{ _('Выходной') }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <!-- Contact Form -->
+                        <div class="contact-form animate">
+                            <h2><i class="fas fa-envelope"></i>{{ _('Отправить сообщение') }}</h2>
+                            <p class="text-muted mb-4">{{ _('Заполните форму ниже, и мы свяжемся с вами в ближайшее время') }}</p>
+
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">{{ _('Имя *') }}</label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">{{ _('Фамилия') }}</label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">{{ _('Email *') }}</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">{{ _('Телефон') }}</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+48...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">{{ _('Тема обращения') }}</label>
+                                    <select class="form-control" id="subject" name="subject">
+                                        <option value="">{{ _('Выберите тему') }}</option>
+                                        <option value="job">{{ _('Поиск работы') }}</option>
+                                        <option value="legalization">{{ _('Легализация документов') }}</option>
+                                        <option value="consultation">{{ _('Консультация') }}</option>
+                                        <option value="other">{{ _('Другое') }}</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">{{ _('Сообщение *') }}</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required placeholder="{{ _('Расскажите подробнее о том, как мы можем вам помочь...') }}"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>{{ _('Отправить сообщение') }}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.querySelector('.navbar-brand img').style.height = '36px';
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.querySelector('.navbar-brand img').style.height = '42px';
+            }
+        });
+
+        // Initialize map
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation observer
+            const animateElements = document.querySelectorAll('.animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animateElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Initialize map
+            setTimeout(() => {
+                try {
+                    const lublinLat = 51.2465;
+                    const lublinLng = 22.5684;
+
+                    const map = L.map('map', {
+                        center: [lublinLat, lublinLng],
+                        zoom: 15,
+                        scrollWheelZoom: false,
+                        zoomControl: true,
+                        attributionControl: true
+                    });
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors',
+                        maxZoom: 18
+                    }).addTo(map);
+
+                    const customIcon = L.divIcon({
+                        html: '<div style="background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;"><i class="fas fa-map-marker-alt"></i></div>',
+                        iconSize: [40, 40],
+                        iconAnchor: [20, 40],
+                        popupAnchor: [0, -40],
+                        className: 'custom-marker'
+                    });
+
+                    const marker = L.marker([lublinLat, lublinLng], {
+                        icon: customIcon
+                    }).addTo(map);
+
+                    marker.bindPopup(`
+                        <div style="text-align: center; padding: 10px; min-width: 200px;">
+                            <h6 style="margin-bottom: 10px; font-weight: 700; color: #4361ee;">Top-Staff</h6>
+                            <p style="margin: 5px 0; color: #666;">{{ _('ул. Graniczna 4/22') }}</p>
+                            <p style="margin: 5px 0; color: #666;">{{ _('Люблин, Польша') }}</p>
+                            <p style="margin: 10px 0 5px 0; color: #4361ee; font-weight: bold;">+48 799 363 316</p>
+                            <small style="color: #999;">{{ _('Пн-Пт: 09:00-17:00') }}</small>
+                        </div>
+                    `).openPopup();
+
+                    setTimeout(() => {
+                        map.invalidateSize();
+                    }, 100);
+
+                    window.addEventListener('resize', () => {
+                        setTimeout(() => {
+                            map.invalidateSize();
+                        }, 200);
+                    });
+
+                } catch (error) {
+                    console.error('Error initializing map:', error);
+                    const mapElement = document.getElementById('map');
+                    if (mapElement) {
+                        mapElement.innerHTML = `
+                            <div class="alert alert-warning h-100 d-flex align-items-center justify-content-center m-0" style="border-radius: 16px;">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marker-alt fa-2x text-muted mb-2"></i>
+                                    <p class="mb-0">{{ _('Карта временно недоступна') }}</p>
+                                    <small class="text-muted">{{ _('ул. Graniczna 4/22, Люблин') }}</small>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            }, 300);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const requiredFields = ['firstName', 'email', 'message'];
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+
+            if (isValid) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>{{ _("Отправляем...") }}';
+
+                setTimeout(() => {
+                    // Show success message
+                    const successAlert = document.createElement('div');
+                    successAlert.className = 'alert alert-success mt-3';
+                    successAlert.innerHTML = `
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>{{ _("Спасибо!") }}</strong> {{ _("Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.") }}
+                    `;
+                    this.parentNode.insertBefore(successAlert, this.nextSibling);
+
+                    // Reset form
+                    this.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+
+                    // Remove alert after 5 seconds
+                    setTimeout(() => {
+                        successAlert.remove();
+                    }, 5000);
+                }, 1000);
+            } else {
+                const errorAlert = document.createElement('div');
+                errorAlert.className = 'alert alert-danger mt-3';
+                errorAlert.innerHTML = `
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    {{ _("Пожалуйста, заполните все обязательные поля.") }}
+                `;
+
+                const existingAlert = this.parentNode.querySelector('.alert');
+                if (existingAlert) {
+                    existingAlert.replaceWith(errorAlert);
+                } else {
+                    this.parentNode.insertBefore(errorAlert, this.nextSibling);
+                }
+
+                setTimeout(() => {
+                    errorAlert.remove();
+                }, 5000);
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

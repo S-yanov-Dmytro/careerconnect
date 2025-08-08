@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .faq-section {
+        background: linear-gradient(to bottom, #f5f7ff 0%, #ffffff 100%);
+        padding: 5rem 0;
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .faq-title {
+        font-weight: 800;
+        color: #2d3748;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .faq-title strong {
+        background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+    }
+
+    .faq-title:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        border-radius: 2px;
+    }
+
+    .faq-subtitle {
+        color: #6c757d;
+        font-size: 1.15rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .accordion {
+        --bs-accordion-border-width: 0;
+        --bs-accordion-border-radius: 16px;
+        --bs-accordion-inner-border-radius: 16px;
+        --bs-accordion-btn-padding-x: 1.75rem;
+        --bs-accordion-btn-padding-y: 1.5rem;
+        --bs-accordion-body-padding-x: 1.75rem;
+        --bs-accordion-body-padding-y: 1.5rem;
+        --bs-accordion-active-color: #4361ee;
+        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+    }
+
+    .accordion-item {
+        border: none;
+        margin-bottom: 1.5rem;
+        border-radius: 16px !important;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .accordion-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-button {
+        font-weight: 600;
+        color: #2d3748;
+        font-size: 1.15rem;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: white;
+        color: #4361ee;
+        box-shadow: none;
+    }
+
+    .accordion-button:after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234361ee'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        background-size: 1.25rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-body {
+        color: #4a5568;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        background-color: white;
+        border-top: 1px solid rgba(67, 97, 238, 0.1);
+    }
+
+    /* Animation */
+    .accordion-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+
+    .animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 767.98px) {
+        .faq-title {
+            font-size: 2.2rem;
+        }
+
+        .faq-subtitle {
+            font-size: 1rem;
+        }
+
+        .accordion-button {
+            font-size: 1.05rem;
+            padding: 1.25rem;
+        }
+    }
+</style>
+
+<section class="faq-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <div class="faq-header animate">
+                    <h1 class="faq-title">{{ _('Питання та') }} <strong>{{ _('Відповіді') }}</strong></h1>
+                    <p class="faq-subtitle">{{ _('Тут ви знайдете відповіді на найпоширеніші запитання про наш сервіс. Якщо у вас залишились питання - зв\'яжіться з нами.') }}</p>
+                </div>
+
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                <i class="fas fa-question-circle me-2" style="color: #4361ee;"></i>
+                                {{ _('Що таке ваш сервіс?') }}
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                {{ _('Наш сервіс надає зручні інструменти для управління вашими проектами, покращення командної роботи та підвищення продуктивності. Ми пропонуємо інноваційні рішення, які допоможуть вашому бізнесу досягти нових висот.') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                <i class="fas fa-play-circle me-2" style="color: #4361ee;"></i>
+                                {{ _('Як розпочати роботу з платформою?') }}
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <ol>
+                                    <li>{{ _('Зареєструйтесь на нашому сайті') }}</li>
+                                    <li>{{ _('Створіть профіль та налаштуйте ваші параметри') }}</li>
+                                    <li>{{ _('Дотримуйтесь інструкцій у розділі "Початок роботи"') }}</li>
+                                    <li>{{ _('Перегляньте наші навчальні матеріали') }}</li>
+                                    <li>{{ _('Починайте використовувати всі можливості платформи') }}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                <i class="fas fa-calendar-check me-2" style="color: #4361ee;"></i>
+                                {{ _('Чи є у вас безкоштовний пробний період?') }}
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                {{ _('Так, ми пропонуємо 14-денний безкоштовний пробний період, щоб ви могли оцінити всі можливості платформи без жодних зобов\'язань. Під час пробного періоду ви матимете доступ до всіх основних функцій.') }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                <i class="fas fa-headset me-2" style="color: #4361ee;"></i>
+                                {{ _('Як отримати підтримку у разі проблем?') }}
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>{{ _('Ми пропонуємо кілька способів отримання підтримки:') }}</p>
+                                <ul>
+                                    <li><strong>{{ _('Онлайн-чат:') }}</strong> {{ _('Доступний прямо на сайті з 9:00 до 18:00') }}</li>
+                                    <li><strong>{{ _('Email:') }}</strong> support@yourservice.com ({{ _('відповідь протягом 24 годин') }})</li>
+                                    <li><strong>{{ _('Телефон:') }}</strong> +38 (XXX) XXX-XX-XX ({{ _('з 10:00 до 17:00') }})</li>
+                                    <li><strong>{{ _('База знань:') }}</strong> {{ _('Детальні інструкції та FAQ у розділі допомоги') }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Анимация появления элементов
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.accordion-item');
+
+        faqItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate-in');
+            }, 150 * index);
+        });
+
+        // Добавляем иконки к кнопкам аккордеона
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            if (!button.querySelector('i')) {
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-question-circle me-2';
+                icon.style.color = '#4361ee';
+                button.insertBefore(icon, button.firstChild);
+            }
+        });
+    });
+</script>
+{% endblock %}
