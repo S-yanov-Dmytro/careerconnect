@@ -9,27 +9,27 @@
 
 ## 🧑‍💼 Project Overview
 
-🌟 **CareerConnect** — сучасна платформа для пошуку роботи і створення резюме з багатомовною підтримкою. Платформа спрощує процес працевлаштування, надаючи зручний інструмент як для кандидатів, так і для адміністратора.
+🌟 **CareerConnect** — a modern platform for job searching and resume creation with multilingual support. The platform simplifies the employment process by providing a convenient tool for both candidates and the administrator.
 
-### 🎯 Основні функції
+### 🎯 Key Features
 
-- 📄 **Генератор резюме**  
-  Динамічна форма з прев’ю і генерацією PDF, який надсилається адміністратору на пошту.
+- 📄 **Resume Generator**  
+  A dynamic form with preview and PDF generation, which is sent to the administrator by email.
 
-- 🔐 **Адмін-панель**  
-  Захищена паролем, тільки для адміністратора. Управління вакансіями, перегляд заявок, редагування контенту, зміна пароля.
+- 🔐 **Admin Panel**  
+  Password-protected and accessible only to the administrator. Manage job postings, view applications, edit content, and change the password.
 
-- 🌍 **Локалізація**  
-  Повна підтримка 5 мов: російська, українська, англійська, польська, німецька (через Flask-Babel).
+- 🌍 **Localization**  
+  Full support for 5 languages: Russian, Ukrainian, English, Polish, and German (via Flask-Babel).
 
-- 📱 **Адаптивність**  
-  Оптимізовано під мобільні пристрої для комфортного використання на будь-яких гаджетах.
+- 📱 **Responsive Design**  
+  Optimized for mobile devices to ensure comfortable use on any gadget.
 
 ---
 
 ## 🚀 Getting Started
 
-### Клонуйте репозиторій
+### Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/careerconnect.git
